@@ -4,9 +4,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Date {
 
-    private int year;
-    private int month;
-    private int day;
+    private final int year;
+    private final int month;
+    private final int day;
    
     public Date(int year, int month, int day) throws DateException{
         boolean isValid = true;
@@ -37,6 +37,7 @@ public class Date {
     {
         return this.day;
     }
+    @Override
     public String toString()
     {
         return day + "." + month + "." + year;
