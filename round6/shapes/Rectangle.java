@@ -1,3 +1,8 @@
+
+/**
+ *
+ * @author ellio
+ */
 public class Rectangle implements IShapeMetrics{
     
     private double height;
@@ -9,7 +14,7 @@ public class Rectangle implements IShapeMetrics{
     }
     public String toString(){
         return ("Rectangle with height " + height + " and width " + width);
-    }
+    } 
     public String name() {
         return "rectangle";
     }
