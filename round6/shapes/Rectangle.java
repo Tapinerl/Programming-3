@@ -1,10 +1,15 @@
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+
 /**
  *
  * @author ellio
  */
 public class Rectangle implements IShapeMetrics{
     
+    NumberFormat formatter = new DecimalFormat("#0.00"); 
     private double height;
     private double width;
 
@@ -13,7 +18,8 @@ public class Rectangle implements IShapeMetrics{
         this.width=width;
     }
     public String toString(){
-        return ("Rectangle with height %.2f" + height + " and width %.2f" + width);
+        return ("Rectangle with height " + formatter.format(height) 
+                + " and width " + formatter.format(width));
     } 
     public String name() {
         return "rectangle";
