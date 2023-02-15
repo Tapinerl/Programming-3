@@ -12,7 +12,7 @@ public class Circle implements IShapeMetrics{
         return radius*2*pi;
     }
     public String toString(){
-        return ("Circle with radius: " + radius);
+        return ("Circle with radius: %.2f" + radius);
     }
     public double area(){
         return pi*(radius*radius);

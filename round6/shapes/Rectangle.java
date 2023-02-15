@@ -13,7 +13,7 @@ public class Rectangle implements IShapeMetrics{
         this.width=width;
     }
     public String toString(){
-        return ("Rectangle with height " + height + " and width " + width);
+        return ("Rectangle with height %.2f" + height + " and width %.2f" + width);
     } 
     public String name() {
         return "rectangle";
