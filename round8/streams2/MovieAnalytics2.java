@@ -37,9 +37,9 @@ public class MovieAnalytics2 {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed().
                         thenComparing(Map.Entry.comparingByKey()))
                 .limit(n)
-                .forEach(entry -> System.out.printf("%s: %d movies",
+                .forEach(entry -> System.out.printf("%s: %d movies\n",
                         entry.getKey(), entry.getValue()));
-        System.out.println();
+        
     }
 
     public void printAverageDurationByGenre() {
@@ -49,9 +49,9 @@ public class MovieAnalytics2 {
 
         genreDurationMap.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
-                .forEach(entry -> System.out.printf("%s: %.2f",
+                .forEach(entry -> System.out.printf("%s: %.2f\n",
                         entry.getKey(), entry.getValue()));
-        System.out.println();
+        
     }
 
     public void printAverageScoreByGenre() {
@@ -62,8 +62,8 @@ public class MovieAnalytics2 {
         genreScoreMap.entrySet().stream()
                 .sorted(Map.Entry.<String, Double>comparingByValue().
                         reversed().thenComparing(Map.Entry.comparingByKey()))
-                .forEach(entry -> System.out.printf("%s: %.2f",
+                .forEach(entry -> System.out.printf("%s: %.2f\n",
                         entry.getKey(), entry.getValue()));
-        System.out.println();
+        
     }
 }
