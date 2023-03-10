@@ -15,8 +15,13 @@ public class MovieAnalytics2 {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             movieData = br.lines().map(line -> {
                 String[] parts = line.split(";");
-                return new Movie(parts[0], Integer.parseInt(parts[1]),
-                        parts[2], Double.parseDouble(parts[3]));
+                String title = parts[0];
+                int releaseYear = Integer.parseInt(parts[1]);
+                int duration = Integer.parseInt(parts[2]);
+                String genre = parts[3];
+                double score = Double.parseDouble(parts[4]);
+                String director = parts[5];
+                return new Movie(title, releaseYear, duration, genre, score, director);
             }).collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
