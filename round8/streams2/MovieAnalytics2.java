@@ -48,7 +48,7 @@ public class MovieAnalytics2 {
                         Collectors.averagingInt(Movie::getDuration)));
 
         genreDurationMap.entrySet().stream()
-                .sorted(Map.Entry.comparingByKey())
+                .sorted(Map.Entry.comparingByValue())
                 .forEach(entry -> System.out.printf("%s: %.2f\n",
                         entry.getKey(), entry.getValue()));
         System.out.println();
