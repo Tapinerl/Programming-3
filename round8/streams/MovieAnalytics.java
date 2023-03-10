@@ -49,7 +49,7 @@ public class MovieAnalytics {
         return movieData.stream().filter(movie -> movie.getReleaseYear() >= 
                 yearA && movie.getReleaseYear() <= yearB).
                 sorted(Comparator.comparing(Movie::getReleaseYear).
-                        thenComparing(Movie::getTitle));;
+                        thenComparing(Movie::getTitle));
     }
 
     public Stream<Movie> moviesByDirector(String director) {
