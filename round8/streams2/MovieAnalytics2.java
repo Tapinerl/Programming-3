@@ -37,7 +37,7 @@ public class MovieAnalytics2 {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed().
                         thenComparing(Map.Entry.comparingByKey()))
                 .limit(n)
-                .forEach(entry -> System.out.printf("%s: %d movies\n",
+                .forEach(entry -> System.out.printf("%s: %d movies",
                         entry.getKey(), entry.getValue()));
         System.out.println();
     }
@@ -49,7 +49,7 @@ public class MovieAnalytics2 {
 
         genreDurationMap.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
-                .forEach(entry -> System.out.printf("%s: %.2f\n",
+                .forEach(entry -> System.out.printf("%s: %.2f",
                         entry.getKey(), entry.getValue()));
         System.out.println();
     }
@@ -62,7 +62,7 @@ public class MovieAnalytics2 {
         genreScoreMap.entrySet().stream()
                 .sorted(Map.Entry.<String, Double>comparingByValue().
                         reversed().thenComparing(Map.Entry.comparingByKey()))
-                .forEach(entry -> System.out.printf("%s: %.2f\n",
+                .forEach(entry -> System.out.printf("%s: %.2f",
                         entry.getKey(), entry.getValue()));
         System.out.println();
     }
