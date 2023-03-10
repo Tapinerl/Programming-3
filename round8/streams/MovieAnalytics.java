@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
@@ -34,19 +35,27 @@ public class MovieAnalytics {
         }
     }
         public Stream<Movie> moviesAfter(int year) {
-        return movieData.stream().filter(movie -> movie.getReleaseYear() >= year);
+        return movieData.stream().filter(movie -> movie.getReleaseYear() >= year).
+                sorted(Comparator.comparing(Movie::getReleaseYear).
+                        thenComparing(Movie::getTitle));
     }
 
     public Stream<Movie> moviesBefore(int year) {
-        return movieData.stream().filter(movie -> movie.getReleaseYear() <= year);
+        return movieData.stream().filter(movie -> movie.getReleaseYear() <= year).
+                sorted(Comparator.comparing(Movie::getReleaseYear).
+                        thenComparing(Movie::getTitle));           
     }
-
     public Stream<Movie> moviesBetween(int yearA, int yearB) {
-        return movieData.stream().filter(movie -> movie.getReleaseYear() >= yearA && movie.getReleaseYear() <= yearB);
+        return movieData.stream().filter(movie -> movie.getReleaseYear() >= 
+                yearA && movie.getReleaseYear() <= yearB).
+                sorted(Comparator.comparing(Movie::getReleaseYear).
+                        thenComparing(Movie::getTitle));;
     }
 
     public Stream<Movie> moviesByDirector(String director) {
-        return movieData.stream().filter(movie -> movie.getDirector().equals(director));
+        return movieData.stream().filter(movie -> movie.getDirector().
+                equals(director)).sorted(Comparator.comparing(Movie::getReleaseYear).
+                        thenComparing(Movie::getTitle));
     }
 
 }
