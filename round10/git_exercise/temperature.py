@@ -21,9 +21,6 @@ def main():
 
         print("{} F = {} C".format(input_temp, t_transform(input_temp, 'f')))
 
-    else:
-        print("Not valid input")
-        exit()
 
 def t_transform(temp, type):
 
