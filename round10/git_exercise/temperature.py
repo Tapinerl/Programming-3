@@ -1,7 +1,7 @@
 
 def main():
 
-    input_ask = string(input("Select transform direction (CF) or (FC): "))
+    input_ask = input("Select transform direction (CF) or (FC): ")
 
     if input_ask == "CF":
         try:
