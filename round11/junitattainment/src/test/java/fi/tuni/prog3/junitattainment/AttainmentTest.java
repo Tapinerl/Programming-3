@@ -37,6 +37,7 @@ public class AttainmentTest
         Exception exception;
         exception = assertThrows(IllegalArgumentException.class, () -> 
         {
+            Attainment attainment = new Attainment("COMP.CS.140", "12345", -1);
         });
 
         String expectedMessage = "Invalid course code, student number or grade!";
